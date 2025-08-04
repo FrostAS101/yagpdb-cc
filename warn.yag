@@ -1,0 +1,13 @@
+{{ $user := .User }}
+{{ $reason := .Reason }}
+{{ $admin := .Author.Globalname }}
+{{ $warn_ID := .WarningID }}
+{{ $respond := joinStr ""
+    "### <:moderator:1324499015773192222>  You have received a warning from <:rgc:1229542330281754684> Ranked Gaming Discord <a:adiscord:1324693309586673674> Server \n"
+    "<:orc:1228058957759643758> Warning / Reason: " $reason "\n"
+    "<:btick:1231250327030992953> Admin: **" $admin "**\n"
+    "<:win11:1229444705935425647> Warn ID: " $warn_ID "\n"
+    "-# <:telegram:1229444700587561050> Please consider reading https://discord.com/channels/1216909676256694472/1216910310280138752 \n"
+    "``⚠️This is an automatically generated message, Answers to this DM will not be received!``"
+    }}
+{{ sendDM $respond }}

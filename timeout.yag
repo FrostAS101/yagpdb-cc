@@ -1,0 +1,15 @@
+{{ $user := .User }}
+{{ $reason := .Reason }}
+{{ $admin := .Author.Globalname }}
+{{ $expires_in := .HumanDuration }}
+{{ $respond := joinStr ""
+    "### <:mod2:1324498250937532536> You have been timed out from <:rgc:1229542330281754684> Ranked Gaming Discord <a:adiscord:1324693309586673674> Server <a:leave:1324696184924667964> \n"
+    "<:huskar:1324720515725922335> Reason: " $reason "\n"
+    "<:btick:1231250327030992953> Admin: **" $admin "**\n"
+    "⏳ Expires in: " $expires_in "\n"
+    "-# <:telegram:1229444700587561050> Please consider reading https://discord.com/channels/1216909676256694472/1216910310280138752 \n"
+    "```diff\n"
+    "- You won't be able to chat / re-act till the time/out expires. ```"
+    "``⚠️This is an automatically generated message, Answers to this DM will not be received!``"
+    }}
+{{ sendDM $respond }}

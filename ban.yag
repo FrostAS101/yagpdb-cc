@@ -1,0 +1,17 @@
+{{ $user := .User }}
+{{ $id := .User.ID }}
+{{ $reason := .Reason }}
+{{ $admin := .Author.Globalname }}
+{{ $duration := .Duration }}
+{{ $expires_in := .HumanDuration }}
+{{ $respond := joinStr ""
+    "### <:leave:1324696112740700292> You have been Banned <:FoxBan:1344774306311180359>  from <:rgc:1229542330281754684> Ranked Gaming Discord <a:adiscord:1324693309586673674> Server <a:leave:1324696184924667964> \n"
+    "<:wolf:1328328800232017920> Reason: " $reason "\n"
+    "<:btick:1231250327030992953> Admin: **" $admin "**\n"
+    "⏳ Expires in: " $expires_in "\n"
+    "-# <:ytick:1231250323805442048> Your User ID: " $id "\n"
+    "<a:adiscord2:1324693326330597507> 👉 [Appeal Your Ban](https://forms.gle/Kro9MokspLanQ1T78) 👈 <a:adiscord2:1324693326330597507>\n"
+    "-# <:telegram:1229444700587561050> if this action was taken wrongly by any means to you please accept our sincere apologies and appeal in the link above :point_up_2:\n"
+    "``⚠️This is an automatically generated message, Answers to this DM will not be received!``"
+    }}
+{{ sendDM $respond }}

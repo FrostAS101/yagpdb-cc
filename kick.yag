@@ -1,0 +1,21 @@
+{{ $user := .User }}
+{{ $reason := .Reason }}
+{{ $admin := .Author.Globalname }}
+
+{{ $respond := joinStr ""
+    "### <:mod2:1324498250937532536> You have been Kicked from <:rgc:1229542330281754684> Ranked Gaming Discord <a:adiscord:1324693309586673674> Server <a:leave:1324696184924667964> \n"
+    "<:mightyhakka:1226234379953504337> Reason: " $reason "\n"
+    "<:btick:1231250327030992953> Admin: **" $admin "**\n"
+    "-# <:telegram:1229444700587561050> if this action was taken wrongly by any means to you please accept our sincere apologies and rejoin the server\n"
+    "``⚠️This is an automatically generated message, Answers to this DM will not be received!``"
+    "\n<a:adiscord2:1324693326330597507> 👉 [Re-join Server](https://discord.gg/b7yvyudZ4k) 👈 <a:adiscord2:1324693326330597507>"
+    }}
+{{ sendDM $respond }}
+----------------------------------------------------
+You have been 
+:information_source:  **Reason:** {{.Reason}}
+:yin_yang: *Admin:* {{.Author}}
+:warning: If you think this is is a mistake, inform **Frost** immediately please or send an email to **RGC.Frost@outlook.com**
+`if this action was taken wrongly by any means to you please accept our sincere apologies`
+----------------------------------------------------
+```⚠️This is an automatically generated message, Answers sent by you will not be received!```----------------------------------------------------
